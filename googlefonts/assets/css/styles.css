@@ -1,0 +1,32 @@
+body {
+	text-align: center;
+	font-size: 24px;
+	font-family: 'Playfair Display', serif;
+}
+
+.normal {
+	font-weight: 400;
+}
+
+.normalitalic {
+	font-weight: 400;
+	font-style: italic;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.bolditalic {	
+	font-weight: 700;
+	font-style: italic;
+}
+
+.ultrabold {
+	font-weight: 900;
+}
+
+.ultrabolditalic {
+	font-weight: 900;
+	font-style: italic;
+}

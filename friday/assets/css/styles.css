@@ -1,0 +1,35 @@
+/* general layout 
+--------------------------------------*/
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400px;
+  font-size: 24px;
+  max-width: 500px;
+}
+
+header {
+  font-size: 60px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.navigation {
+  list-style: none;
+  padding: 0;
+
+ } 
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.navigation a:hover {
+  color: #73737F;
+}
+
+.navigation a li {
+  border-bottom: black solid 1px;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "intro-to-npm",
+  "version": "0.0.1",
+  "devDependencies": {},
+  "dependencies": {
+    "bootstrap": "^3.3.5"
+  }
+}

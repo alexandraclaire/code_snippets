@@ -1,0 +1,44 @@
+// Author: Maurice van Cooten
+
+// Compass and plugins
+
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+
+// Stylesheets
+
+@import "variables";
+@import "base";
+@import "layout";
+@import "links";
+@import "grid";
+
+body {
+	font-family: 'futura';
+	color: #eee;
+}
+
+h1, h2, h3 {
+	font-family: 'Caveat', cursive;
+}
+
+h1 {
+	font-size: 60px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 48px;
+}
+
+.social {
+	background: #eee;
+	color: #028090;
+	height: 50px;
+	width: 200px;
+	text-align: center;
+	border: 5px solid #028090;
+	border-radius: 5px;
+	margin: 10px;
+}

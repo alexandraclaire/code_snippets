@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document Ready</title>
+	<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+	
+	<button class="show">open</button>
+	<div class="overlay">
+		<div>
+			<p>some content to show and hide</p>
+			<button class="hide">close</button>
+		</div>
+	</div>
+	
+	<script>
+	// this works for all browsers from IE8 on...
+	document.addEventListener('DOMContentLoaded', function(){
+		var open = document.querySelector('.show'),
+		close = document.querySelector('.hide'),
+		modal = document.querySelector('.overlay')
+		modal.classList.add('accessibly-hidden');
+		close.addEventListener('click', function(){
+			modal.classList.add('accessibly-hidden');
+		})
+		open.addEventListener('click', function(){
+			modal.classList.remove('accessibly-hidden');
+		})
+
+	});
+	</script>
+
+</body>
+</html>

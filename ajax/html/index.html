@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loading TML with AJAX</title>
+</head>
+<body>
+	<div id="content"></div>
+	<script>
+	var xhr = new XMLHttpRequest(); //create xmlHttpRequest
+
+	xhr.onload = function() { //when response had loaded
+		// the following condition only works on a server
+		if(xhr.status === 200) {
+			document.getElementById('content').innerHTML = xhr.responeText;
+				.responseText;
+		}
+	};	
+
+	xhr.open('GET', 'data.html', true);
+	xhr.send(null);
+	</script>
+
+
+
+</body>
+</html>

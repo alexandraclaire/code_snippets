@@ -1,0 +1,74 @@
+/* Layout
+------------------------------------------------------*/
+
+body {
+	font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+	color: #3A4042;
+}
+
+form {
+	max-width: 300px;
+	margin: 10px auto;
+	padding: 10px 20px;
+	background: #E3E7E8;
+}
+
+h1 {
+	margin: 0 0 30px 0;
+	text-align: center;
+	border-bottom: 1px solid;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+	background: rgba(255,255,255,0.1);	
+	border: none;
+	font-size: 1em;
+	height: auto;
+	padding: 15px 5px;
+	margin: 0 auto;
+	outline: 0;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: #8a97a0;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+button {
+	padding: 19px 39px 18px 39px;
+	color: #fff;
+	background-color: #F6546A;
+	font-size: 18px;
+	text-align: center;
+	border-radius: 5px;
+	width: 100%;
+	border: 1px solid #F6546A;
+	border-width: 1px 1px 3px;
+	box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+	margin-bottom: 10px;
+}
+
+fieldset {
+	border: 2px solid #8a97a0;
+	margin-bottom: 1em;
+}
+
+#choices {
+	background-color: #8a97a0;
+	border-radius: 5px;
+}
+
+
+/* Media Queries
+------------------------------------------------------*/
+
+@media screen and (min-width: 480px) {
+	form {
+		max-width: 480px;
+	}
+}

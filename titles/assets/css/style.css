@@ -1,0 +1,17 @@
+body {
+	font-size: 24px;
+	font-family: 'Work Sans', sans-serif;
+	background-color: #f7f7f7;
+	max-width: 960px;
+	line-height: 32px;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 52px;
+}
+
+h3 {
+	font-size: 30px;
+	margin-bottom: .95em;
+}

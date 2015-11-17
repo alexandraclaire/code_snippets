@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>HTML Forms</title>
+		<link rel="stylesheet" href="assets/css/styles.css">
+	</head>
+	<body>
+		<form action="index.html" method="post">
+			<h1>Sign Up</h1>
+				<fieldset>
+					<legend><span class="number"></span>Your basic info</legend>
+					<label for="">Name:</label>
+					<input type="text" id="Name" name="user_name" placeholder="Enter Name">
+					<label for="">Email:</label>
+					<input type="email" id="mail" name="user_email" placeholder="Email">
+					<label for="">Password:</label>
+					<input type="password" id="password" name="user_password" placeholder="Password">
+					<label>Age:</label>
+					<input type="radio" id="under_21" value="under_21" name="user_age">
+					<label for="under_21" class="light">Under 21</label>
+					<input type="radio" id="21_or_over" value="21_or_over" name="user_age">
+					<label for="21_or_over" class="light">21 or over</label>
+				</fieldset>	
+				<fieldset>
+					<legend><span class="number"></span>Have your say</legend>
+					<label for="">Comments:</label>
+					<textarea name="user_comment" id="comment" cols="30" rows="10" placeholder="Enter your comments"></textarea>
+					<label for="joe">Job:</label>
+						<select name="user_job" id="job">
+							<optgroup label="Doctor">
+								<option value="Consultant">Consultant</option>
+								<option value="registrar">Registrar</option>
+								<option value="internist">Internist</option>
+								<option value="house_officer">House Officer</option>
+								<option value="medical_student">Medical Student</option>
+							</optgroup>
+						</select>
+					<label>Department:</label>
+						<select name="user_department" id="department">
+							<optgroup label="Department">
+									<option value="Surgery">Surgery</option>
+									<option value="General_Medicine">General Medicine</option>
+									<option value="Oncology">Oncology</option>
+									<option value="gastroenterolgy">Gastroenterology</option>
+							</optgroup>	
+						</select>
+					<label id="coffee">Coffee Order:</label><br>
+					<div id="choices">
+						<input type="checkbox" id="flat_white" value="flat_white" name="coffee">	
+						<label for="">Flat White</label>
+						<input type="checkbox" id="latte" value="latte" name="coffee">	
+						<label for="">Latte</label>
+						<input type="checkbox" id="long_black" value="long_black" name="coffee">	
+						<label for="">Long Black</label>
+					</div>	
+				</fieldset>
+				<button type="submit">Sign Up</button>
+		</form>
+	</body>
+</html>

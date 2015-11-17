@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script>
+	// create variables with lat/long
+	var fashionvalley=new google.maps.LatLng(32.767652, -117.166511);
+
+	function initialize() {
+// sets properties of the map
+		var mapProp = {
+			//centres map on variable southcoastplaza
+			center:fashionvalley,
+			zoom:10,
+			// panControl: false,
+			// zoomControl: false,
+			// mapTypeControl: false,
+			// scaleControl: false,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
+// adds it to the div
+		map=new google.maps.Map(document.getElementById('googleMap'), mapProp);
+	
+
+	google.maps.event.addListener(map, 'click', function(event) {
+		placeMarker(event.latLng);
+	});
+}
+
+
+	function placeMarker(location) {
+		var marker = new google.maps.Marker({
+			position: location,
+			map: map,
+		});
+		var infowindow = new google.maps.InfoWindow({
+			content: 'Latitude: ' + location.lat() + '<br>Longtitude: ' + location.lng()
+		});
+infowindow.open(map, marker);
+		}
+
+
+
+	
+// loads the map
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+	</script>
+</head>
+<body>
+	<div id="googleMap" style="width:900px;height:900px;"></div>
+</body>
+</html>

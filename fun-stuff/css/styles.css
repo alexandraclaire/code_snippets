@@ -1,0 +1,22 @@
+html, body { 
+	background-color:#000; 
+	color: #fff; 
+	height: 100%;
+}
+
+.wrapper { 
+	height: 100%;
+} 
+
+.c {
+	height: 100px; 
+	top: 50%; 
+	text-align: center;
+}
+
+a {
+	color: #fff; 
+	text-decoration:none; 
+	font-style: italic; 
+	font-size:60px;
+}

@@ -1,0 +1,45 @@
+/* this is default styling to make the 'boxes' (numbers) visible 
+----------------------------------------------*/
+.box {
+	color: white;
+	font-size: 100px;
+	text-align: center;
+	text-shadow: 4px 4px 0 #999;
+}
+
+.box p {
+	font-size: 20px;
+}
+
+/* this changes the colours for each box
+----------------------------------------------*/
+
+.box1 {background-color: #f6f6f7;}
+.box2 {background-color: #edeef0;}
+.box3 {background-color: #e4e6e9;}
+.box4 {background-color: #dcdee2;}
+.box5 {background-color: #d3d6db;}
+.box6 {background-color: #caced4;}
+.box7 {background-color: #c2c6cd;}
+.box8 {background-color: #b9bec6;}
+.box9 {background-color: #b0b6bf;}
+.box10 {background-color: #a8aeb8;}
+
+/* flex starts here
+----------------------------------------------*/
+
+/* flex default is rows, this is column layout, and reverse order */
+.wrapper{
+	display: flex;
+	flex-direction: column-reverse; 
+}
+
+/* changes the size of this box to 2x the size of the others */
+.box3 {
+	flex: 2;
+}
+
+/* changes the size of this box to 4x the size of the others */
+.box6 {
+	flex: 4;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script>
+	// create variables with lat/long
+	var x=new google.maps.LatLng(32.713750, -117.163531);
+	var fashionvalley=new google.maps.LatLng(32.767652, -117.166511);
+	var southcoastplaza=new google.maps.LatLng(33.691279, -117.907827);
+	var beverlycenter=new google.maps.LatLng(34.073898, -118.377300);
+
+	function initialize() {
+// sets properties of the map
+		var mapProp = {
+			//centres map on variable southcoastplaza
+			center:southcoastplaza,
+			zoom:9,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
+// adds it to the div
+		var map=new google.maps.Map(document.getElementById('googleMap'), mapProp);
+	
+//creates an array of the variables
+	var myTrip=[x,fashionvalley, southcoastplaza, beverlycenter]
+	//var roadTrip=new google.maps.Polyline({
+	//	path:myTrip, 
+	//	strokeColor: '#434040',
+	//	strokeOpacity:.8,
+	//	strokeWeight:2
+	//});
+	var roadTrip=new google.maps.Polygon({
+			path:myTrip, 
+			strokeColor: '#434040',
+			strokeOpacity:.8,
+			strokeWeight:2,
+			fillColor: '#434040',
+			fillOpacity:0.4
+		});
+
+	roadTrip.setMap(map);
+
+}
+// loads the map
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+	</script>
+</head>
+<body>
+	<div id="googleMap" style="width:900px;height:900px;"></div>
+</body>
+</html>

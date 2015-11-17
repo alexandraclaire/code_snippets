@@ -1,0 +1,38 @@
+/* filters
+-------------------------------------*/
+
+.grayscale {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray;
+	transition: all 1s ease-in-out;
+}
+
+.grayscale:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+	filter: gray;
+}
+
+.blur {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	transition: all 1s ease-in-out;
+}
+
+.blur:hover {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
+
+.sepia:hover {
+	-webkit-filter: sepia(1);
+	filter: sepia(1);
+}
+
+.rotate:hover {
+	-webkit-filter: saturate(4);
+	filter: saturate(4)
+}
+
+

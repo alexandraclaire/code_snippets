@@ -1,0 +1,42 @@
+/* Gallery
+------------------------------------------ */
+
+.gallery {
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.gallery img {
+	border: 6px solid #27423c;
+	transition: all .2s ease-in-out;
+}
+
+.gallery img:hover {
+	border: 6px solid #91baae;
+}
+
+.gallery li div.item {
+	position: relative;
+	overflow: hidden;
+}
+
+.gallery li div.item span{
+	position: absolute;
+	bottom: -50px;
+	left: 0;
+	background: #fff;
+	background: rgba(198,211,208,0.8);
+	width: 100%;
+	padding: .7em 0 1.2em 0;
+	text-align: center;
+	transition: all .3s ease-in-out;
+}
+
+.gallery li div.item:hover span {
+	bottom: 0;
+
+}

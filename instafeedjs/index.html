@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Instafeed.js</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>katemontgom's instagram</h1>
+	<div id="instafeed"></div>
+
+<script src="instafeed.min.js"></script>
+	<script>
+    var userFeed = new Instafeed({
+        get: 'user',
+        userId: '1984929',
+        accessToken: '1984929.1677ed0.dc4ae41e262e435d98f2969e620743ef',
+        resolution: 'low_resolution',
+        limit: '100',
+        template: '<div class="insta"><img src="{{image}}"><p>{{caption}}</p><p>Likes: {{likes}}</p></div>'
+    });
+    userFeed.run();
+</script>
+
+</body>
+</html>

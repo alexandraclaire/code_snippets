@@ -1,0 +1,32 @@
+body {
+	font-size: 24px;
+	text-align: center;
+}
+
+.pacifico {
+	font-family: 'Pacifico', cursive;
+}
+
+.librebaskerville {
+	font-family: 'Libre Baskerville', serif;
+}
+
+.andada {
+	font-family: 'Andada', serif;
+}
+
+.hindvadodara {
+font-family: 'Hind Vadodara', sans-serif;
+}
+
+.martel {
+	font-family: 'Martel', serif;
+}
+
+.poppins {
+	font-family: 'Poppins', sans-serif;
+}
+
+.worksans {
+	font-family: 'Work Sans', sans-serif;
+}

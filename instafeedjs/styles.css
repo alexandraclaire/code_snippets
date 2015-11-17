@@ -1,0 +1,16 @@
+body {
+	font-family: helvetica;
+	background: #66527d;
+	color: #fff;
+}
+
+.instafeed {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.insta {
+	width: 200px;
+	height: 200px;
+	margin: 10px;
+}

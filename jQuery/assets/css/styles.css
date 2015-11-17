@@ -1,0 +1,19 @@
+body {
+	background-color: #56B69F;
+	font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+	color: #606060;
+	font-size: 16px;
+	text-align: justify;
+}
+
+h1 {
+	font-size: 64px;
+	font-weight: 800;
+	text-align: center;
+}
+
+h2 {
+	font-size: 34px;
+	font-weight: 600;
+	text-align: center;
+}

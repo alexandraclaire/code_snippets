@@ -1,0 +1,77 @@
+#one {
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    fill: #999c9c;
+  }
+  100% {
+    fill: #C9E8E8;
+  }
+}
+
+#two {
+  animation: pulse-two 5s infinite;
+}
+  
+@keyframes pulse-two {
+  0% {
+    fill: #999c9c;
+  }
+  100% {
+    fill: #BFDCE6;
+	}
+}
+
+#three {
+  animation: pulse-three 5s infinite;
+}
+  
+@keyframes pulse-three {
+  0% {
+    fill: #999c9c;
+  }
+  100% {
+    fill: #D7E1EE;
+	}
+}
+
+#four {
+  animation: pulse-four 5s infinite;
+}
+  
+@keyframes pulse-four {
+  0% {
+    fill: #999c9c;
+  }
+  100% {
+    fill: #F9DFE1;
+	}
+}
+
+#five {
+  animation: pulse-five 5s infinite;
+}
+  
+@keyframes pulse-five {
+  0% {
+    fill: #999c9c;
+  }
+  100% {
+    fill: #D4B5E5;
+	}
+}
+
+#six {
+  animation: pulse-six 5s infinite;
+}
+  
+@keyframes pulse-six {
+  0% {
+    fill: #999c9c;
+  }
+  100% {
+    fill: #E9DCEA;
+	}
+}

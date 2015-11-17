@@ -1,0 +1,12 @@
+.bar {
+	display: inline-block;
+	width: 80px;
+	height: 75px;
+	background: lavender;
+	border: 1px dotted purple;
+	margin-right: 5px;
+}
+
+h1 {
+   -webkit-text-stroke: 1px purple;
+}

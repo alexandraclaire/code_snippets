@@ -1,0 +1,21 @@
+body {background: darkgrey;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, Geneva, sans-serif;}
+
+@media screen and (min-width: 600px) {
+
+	#one {
+		width: 70%;
+		float: left;
+		background: magenta;
+	}
+
+	#two {
+		width: 30%;
+		float: right;
+		padding: .5em;
+		background: blue;
+		
+	}

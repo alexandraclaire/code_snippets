@@ -1,0 +1,17 @@
+{
+  "name": "bower",
+  "version": "0.0.1",
+  "homepage": "https://github.com/katemontgom/snippets",
+  "authors": [
+    "katemontgom"
+  ],
+  "description": "bower intro",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

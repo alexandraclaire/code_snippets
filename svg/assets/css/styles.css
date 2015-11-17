@@ -1,0 +1,15 @@
+#rectangle {
+	width: 300px;
+	height: 200px;
+	fill:#ff9681;
+	stroke-width:3;
+	stroke:#FF5635;
+}
+
+#rectangle:hover {
+	fill: #71e7ff;
+	stroke: #35deff;
+	width: 400px;
+	height: 300px
+}
+

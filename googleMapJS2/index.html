@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GOOGLEMAP POLYLINE</title>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script>
+	//This is the co-ordinates of the places the lines are joining to
+	var x = new google.maps.LatLng(-36.8487399,174.76328);
+	var greenlane = new google.maps.LatLng(-36.890804, 174.794280);
+	var manukau = new google.maps.LatLng(-36.986844, 174.881030);
+	var hamilton = new google.maps.LatLng(-37.7751207,175.1947124);
+	var circle = new google.maps.LatLng(-36.8487399,174.76328);
+	var mycenter = new google.maps.LatLng(-36.8487399,174.76328);
+
+	//Creating Polyline / Polygon
+	function init() {
+
+		// Creating the Map
+		var mapProp = {
+			center: x,
+			zoom:8,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
+
+		//This grabs the ID googleMap and place the map in it
+		var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
+
+		//Creating the Lines
+		var myTrip = [greenlane,manukau,hamilton];
+		var flightPath = new google.maps.Polyline({
+			path:myTrip,
+			strokeColor: "#0000FF",
+			strokeOpacity:0.8,
+			strokeWeight:2,
+		});
+
+		//Creating the Polygon
+		var flightPath2 = new google.maps.Polygon({
+			path:myTrip,
+			strokeColor: "#0000FF",
+			strokeOpacity:0.8,
+			strokeWeight:2,
+			fillColor: "#0000FF",
+			fillOpacity:0.4,
+		});
+
+		//Initialize the function to the map
+		flightPath.setMap(map);
+		flightPath2.setMap(map);
+
+	}
+
+	//This enables the function when the window is loaded
+	google.maps.event.addDomListener(window, 'load', init);
+
+
+	//Creating a Circle around Auckland
+
+	function init2() {
+
+		var mapProp2 = {
+			center: circle,
+			zoom:10,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
+
+		var map2 = new google.maps.Map(document.getElementById('googleMap2'), mapProp2);
+
+		var city = new google.maps.Circle({
+			center: circle,
+			radius:30000,
+			strokeColor: "#0000FF",
+			strokeOpacity:0.8,
+			strokeWeight:2,
+			fillColor: "#0000FF",
+			fillOpacity:0.4,
+		});
+
+		city.setMap(map2);
+	}
+
+	//This enables the function when the window is loaded
+	google.maps.event.addDomListener(window, 'load', init2);
+
+
+	//Creating a Zoom on click effect
+	function init3() {
+
+		var mapProp3 = {
+			center:mycenter,
+			zoom:10,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
+
+		var map3 = new google.maps.Map(document.getElementById('googleMap3'), mapProp3);
+
+		//Making the Marker
+		var marker = new google.maps.Marker({
+			position:mycenter,
+			title: 'Click to zoom',
+		});
+
+		//Placing the marker on the map
+		marker.setMap(map3);
+
+		//On click it zooms the map
+		google.maps.event.addListener(marker,'click',function(){
+			map3.setZoom(12);
+			map3.setCenter(marker.getPosition());
+		});
+
+		//4 seconds after the center has changed it will pan back to the marker
+		google.maps.event.addListener(map3,'center_changed',function(){
+
+			window.setTimeout(function(){
+				map3.panTo(marker.getPosition());
+			},4000); //The time in miliseconds it takes to pan back to marker
+		});
+	}
+
+	//This enables the function when the window is loaded
+	google.maps.event.addDomListener(window, 'load', init3);
+
+	//Creating a Marker with LatLng displayed in an infowindow
+	function init4() {
+
+		var mapProp4 = {
+			center:mycenter,
+			zoom:5,
+			panControl:true,
+			zoomControl:true,
+			zoomControlOption: { //Adding options on the google map itself, refer back to google developer for more info
+				style:google.maps.ZoomControlStyle.SMALL
+			},
+			mapTypeControl:true,
+			mapTypeControlOptions: {
+				style:google.maps.MapTypeControlStyle.DROPDOWN_MENU
+			},
+			scaleControl:true,
+			streetViewControl:true,
+			overviewMapControl:true,
+			rotateControl:true,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
+
+		map4 = new google.maps.Map(document.getElementById('googleMap4'), mapProp4);
+
+		google.maps.event.addListener(map4, 'click', function(event){
+			placeMarker(event.latLng);
+		});
+	
+		function placeMarker(location) {
+			var marker2 = new google.maps.Marker({
+				position: location,
+				map: map4,
+			});
+
+			var infowindow = new google.maps.InfoWindow({
+				content: 'Latitude: ' + location.lat() + '<br>Longtitude: ' + location.lng()
+			});
+
+		//Placing the marker on the map
+		marker2.setMap(map4);
+
+		//Placing the info window
+		infowindow.open(map4,marker2);
+
+		}
+	}
+
+	//This enables the function when the window is loaded
+	google.maps.event.addDomListener(window, 'load', init4);
+
+	//Hybrid map with Tilt option
+	function init5() {
+		var mapProp5 = {
+			center:mycenter,
+			zoom:18,
+			mapTypeId:google.maps.MapTypeId.HYBRID
+		};
+
+		var map5 = new google.maps.Map(document.getElementById("googleMap5"),mapProp5);
+		map5.setTilt(0);
+	}
+
+	google.maps.event.addDomListener(window,'load',init5);
+
+	//Changing colors on the map
+	function init6() {
+		var mapProp6 = {
+			center:mycenter,
+			zoom:18,
+			mapTypeId:google.maps.MapTypeId.ROADMAP
+		};
+
+		var map6 = new google.maps.Map(document.getElementById("googleMap6"),mapProp6);
+
+		//Setting Styling for the Map
+		var styles = [{
+			stylers:[
+			{ hue: "#e74d29" },
+			{ saturation: 0 }
+			]
+		},{
+			featureType: "road",
+			elementType: "geometry",
+			stylers: [
+			{ hue: "#ececec" },
+			{ lightness: 0 },
+			{ visibility: "simplified"}
+			]
+		},{
+			featureType: "road",
+			elementType: "labels",
+			stylers: [
+			{ visibility: "off"}
+			]
+		}];
+	
+	map6.setOptions({styles: styles});
+
+	};
+
+	google.maps.event.addDomListener(window,'load',init6);
+
+	</script>
+</head>
+<body>
+	<h1 style="max-width:1000px;text-align:center;margin:0 auto;font-size:2em;">GOOGLE MAP DRAWING POLYLINE/POLYGON/CIRCLE & MARKER ZOOM & PAN BACK TO MARKER & CREATING MARKER AND THE LATLNG</h1>
+	<div id="googleMap" style="width:800px;height:700px;float:left;margin:50px"></div>
+	<div id="googleMap2" style="width:800px;height:700px;float:right;margin:50px"></div>
+	<div id="googleMap3" style="width:800px;height:700px;float:left;margin:50px"></div>
+	<div id="googleMap4" style="width:800px;height:700px;float:right;margin:50px"></div>
+	<div id="googleMap5" style="width:800px;height:700px;float:left;margin:50px"></div>
+	<div id="googleMap6" style="width:800px;height:700px;float:right;margin:50px"></div>
+</body>
+</html>

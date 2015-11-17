@@ -1,0 +1,18 @@
+body {
+	font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+	color: #0D1F2D;
+	background-color: #546A7B;
+	font-size: 20px;
+}
+
+form {
+	max-width: 500px;
+	margin: 10px auto;
+	padding: 10px 20px;
+	background: #9EA3B0;
+	text-align: left;
+}
+
+span {
+	font-size: 12px;
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Leaflet Chloropleth Map</title>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+	<script src="nzregions.js"></script>
+</head>
+<body>
+
+	<style>
+	
+
+	#map { height: 680px; }
+
+  .info {
+    padding: 6px 8px;
+    font: 14px/16px courier, monospace;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+	}
+	.info h4 {
+	    margin: 0 0 5px;
+	    color: #777;
+	}
+
+	.legend {
+	    line-height: 18px;
+	    color: #555;
+	}
+	.legend i {
+	    width: 18px;
+	    height: 18px;
+	    float: left;
+	    margin-right: 8px;
+	    opacity: 0.7;
+	}
+  
+	
+	</style>
+
+	<div id="map"></div>
+
+	<script>
+		// create a map in the "map" div, set the view to a given place and zoom		
+		var map = L.map('map').setView([-40.966, 172.763], 5);
+
+		// add an OpenStreetMap tile layer
+		L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Specialty/DeLorme_World_Base_Map/MapServer/tile/{z}/{y}/{x}', {
+		    attribution: 'Tiles &copy; Esri &mdash; Copyright: &copy;2012 DeLorme'
+		}).addTo(map);
+
+		function getColor(d) {
+    return d > 1000000 ? '#7a0177' :
+           d > 500000  ? '#c51b8a' :
+           d > 250000  ? '#f768a1' :
+           d > 50000  ? '#fbb4b9' :
+                      '#feebe2';
+
+    }
+
+    function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.population),
+        weight: 2,
+        opacity: 1,
+        color: '#54278f',
+        dashArray: '3',
+        fillOpacity: 0.7
+    	};
+	}
+
+	// 'onEachFeature: function that will be called on each feature layer. ( outline), part of GeoJSON.
+
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 5,
+        color: '#2b8cbe',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront();
+    }
+
+    info.update(layer.feature.properties);
+}
+
+// Represents GeoJSON layer.
+
+var geojson;
+
+function resetHighlight(e) {
+    geojson.resetStyle(e.target);
+
+    info.update();
+}
+
+// Zoom feature for GeoJSON layer.
+
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+
+// Add highlight feature and zoom feature to GeoJSON layer, (regions).
+
+function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+}
+
+// Triggers main components of GeoJSON, regions.
+
+geojson = L.geoJson(regions, {
+  style: style,
+  onEachFeature: onEachFeature
+  }).addTo(map);
+
+// Custom Info Control
+
+var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// Method that we will use to update the control based on feature properties passed
+
+info.update = function (props) {
+    this._div.innerHTML = '<h4>NZ Population 2013</h4>' +  (props ?
+        '<b>' + props.name + '</b><br />' + props.population + '00' + ' people'
+        : 'Hover over a state');
+};
+
+info.addTo(map);
+
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 50000, 250000, 500000, 1000000],
+        labels = [ ];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i]*100 + (grades[i + 1]*100 ? ' &ndash; ' + grades[i + 1]*100 + '<br>' : '+');
+    }
+
+    return div;
+};
+
+legend.addTo(map);
+	
+		$('.legend').prepend('<h2> Key </h2>');
+
+
+	</script>
+	
+</body>
+</html>

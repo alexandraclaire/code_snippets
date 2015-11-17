@@ -1,0 +1,167 @@
+/* Animation
+----------------------------------------*/
+
+@-webkit-keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+.rotate:hover {
+	-webkit-animation: spin 2.5s infinite;
+	animation: spin 2.5s infinite;
+}
+
+/* Scale 
+-----------------------------------------------*/
+
+@-webkit-keyframes enlarge {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.2);
+	}
+}
+@keyframes enlarge {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.2);
+	}
+}
+.scale:hover {
+	-webkit-animation: enlarge .5s infinite;
+	animation: enlarge .5s infinite;
+}
+
+/* Rainbow
+--------------------------------------------------*/
+
+@-webkit-keyframes rainbow {
+	0% {
+		background: lime;
+	}
+	25% {
+		background: yellow;
+	}
+	75% {
+		background: orange;
+	}
+	100% {
+		background: red;
+	}
+}
+
+@keyframes rainbow {
+	0% {
+		background: lime;
+	}
+	25% {
+		background: yellow;
+	}
+	75% {
+		background: orange;
+	}
+	100% {
+		background: red;
+	}
+}
+
+.background-effect {
+	border-radius: 50%;
+	-webkit-animation: rainbow .5s infinite;
+	animation: rainbow .5s infinite;
+}
+
+/*@-webkit-keyframes position {
+	0% {
+		left: 0;
+	}
+	25% {
+		left: 200px;
+	}
+	75% {
+		left: 400px;
+	}
+	100% {
+		left: 800px;
+	}
+}
+
+@-keyframes position {
+	0% {
+		left: 0;
+	}
+	25% {
+		left: 200px;
+	}
+	75% {
+		left: 400px;
+	}
+	100% {
+		left: 800px;
+	}
+}
+
+.move {
+	position: fixed;
+	bottom: 0;
+	-webkit-animation: position .5s infinite alternate;
+	animation: position .5s infinite alternate;
+}*/
+
+.background-effect {
+	border-radius: 50%;
+	-webkit-animation: rainbow .5s infinite;
+	animation: rainbow .5s infinite;
+}
+
+@-webkit-keyframes position {
+	0% {
+		left: 0;
+	}
+	25% {
+		left: 200px;
+	}
+	75% {
+		left: 400px;
+	}
+	100% {
+		left: 800px;
+	}
+}
+
+@-keyframes position {
+	0% {
+		left: 0;
+	}
+	25% {
+		left: 200px;
+	}
+	75% {
+		left: 400px;
+	}
+	100% {
+		left: 800px;
+	}
+}
+
+.horse {
+	position: fixed;
+	bottom: 0;
+	-webkit-animation: position 2.5s infinite alternate;
+	animation: position 2.5s infinite alternate;
+}
