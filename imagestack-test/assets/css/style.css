@@ -1,0 +1,36 @@
+body{
+	width:100%;
+}
+
+.container{
+	width:80%;
+	margin:0 auto;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+.image{
+	width:500px;
+	margin:10px 0;
+}
+.top{
+	z-index: 4;
+}
+.stack{
+	margin-top: -280px;
+}
+
+.one{
+	margin-left: 45px;
+	z-index: 3;
+}
+
+.two{
+	margin-left: 90px;
+	z-index: 2;
+}
+
+.three{
+	margin-left: 135px;
+	z-index: 1;
+}
